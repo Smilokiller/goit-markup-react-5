@@ -1,7 +1,7 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
-
+import styles from "../telBook.module.css";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -16,6 +16,7 @@ export function FindInput(prop) {
 
   return (
     <>
+      <h3 className={styles.title}>Find contacts by name</h3>
       <TextField
         className={classes.root}
         id="outlined-basic"

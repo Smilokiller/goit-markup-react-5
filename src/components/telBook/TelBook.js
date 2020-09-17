@@ -133,8 +133,8 @@ export function TelBook() {
       </form>
 
       <h2 className={styles.title}>Contacts</h2>
-      <h3 className={styles.title}>Find contacts by name</h3>
-      <FindInput onChange={handleFilter} />
+
+      {contacts.length > 1 && <FindInput onChange={handleFilter} />}
 
       <ContactList contactsList={drowContacts()} onClick={handleDelete} />
     </div>
