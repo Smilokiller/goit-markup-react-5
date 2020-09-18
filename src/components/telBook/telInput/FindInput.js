@@ -1,7 +1,9 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
-import styles from "../telBook.module.css";
+import { CSSTransition } from "react-transition-group";
+import styles from "./contactListFind.module.css";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -16,15 +18,21 @@ export function FindInput(prop) {
 
   return (
     <>
-      <h3 className={styles.title}>Find contacts by name</h3>
-      <TextField
-        className={classes.root}
-        id="outlined-basic"
-        label="filter"
-        variant="outlined"
-        name="filter"
-        onChange={prop.onChange}
-      />
+      <CSSTransition
+        classNames={styles}
+        timeout={500}
+        unmountOnExit
+        in={prop.contacts.length > 1}
+      >
+        <TextField
+          className={classes.root}
+          id="outlined-basic"
+          label="Find contacts by name"
+          variant="outlined"
+          name="filter"
+          onChange={prop.onChange}
+        />
+      </CSSTransition>
     </>
   );
 }

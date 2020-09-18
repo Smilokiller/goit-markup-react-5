@@ -4,7 +4,7 @@
 
 .enterActive {
   transform: translateX(0);
-  transition: transform 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
 }
 
 .exit {
@@ -13,7 +13,7 @@
 
 .exitActive {
   transform: translateX(100%);
-  transition: transform 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
 }
 
 .listItems {

@@ -85,10 +85,8 @@ export function TelBook() {
   }
 
   function handleDelete(id) {
-    console.log(id);
     const deleted = contacts.filter((el) => el.id !== id);
     setContacts(deleted);
-    console.log();
   }
 
   function drowContacts() {
@@ -96,7 +94,6 @@ export function TelBook() {
       const name = el.name.toLowerCase();
       const filterName = filter.toLowerCase();
       if (name.includes(filterName)) {
-        console.log(el);
         return el;
       }
     });
@@ -134,8 +131,7 @@ export function TelBook() {
 
       <h2 className={styles.title}>Contacts</h2>
 
-      {contacts.length > 1 && <FindInput onChange={handleFilter} />}
-
+      <FindInput onChange={handleFilter} contacts={contacts} />
       <ContactList contactsList={drowContacts()} onClick={handleDelete} />
     </div>
   );
